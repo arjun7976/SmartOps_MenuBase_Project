@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>All Web Tasks — One File</title>
+<style>
+  body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;line-height:1.45;background:#0f172a;color:#e6eef8;padding:18px;}
+  h1,h2{color:#fff}
+  .card{background:#0b1220;border:1px solid rgba(255,255,255,0.04);padding:14px;border-radius:10px;margin:10px 0}
+  button{padding:8px 12px;border-radius:8px;border:0;background:#7c3aed;color:white;cursor:pointer}
+  video,canvas{border-radius:8px;display:block;margin:8px 0;max-width:100%}
+  .row{display:flex;gap:12px;flex-wrap:wrap}
+  input,textarea,select{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:#071023;color:#e6eef8}
+  #log{white-space:pre-wrap;background:#071127;padding:8px;border-radius:8px;max-height:220px;overflow:auto}
+  #box{width:150px;height:100px;background:#1f2937;color:#fff;position:relative;cursor:grab;display:flex;align-items:center;justify-content:center;border-radius:8px}
+  .small{font-size:13px;color:#a8b3c7}
+  .section-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:900px){ .section-grid{grid-template-columns:repeat(2,1fr)} }
+</style>
+</head>
+<body>
+
+<h1>All Web Tasks — One File</h1>
+<p class="small">Open on localhost/HTTPS. Server-required features call placeholder endpoints — check comments for server sample code.</p>
+
+<!-- ===== Mic -> Speech-to-text (Task 1) ===== -->
+<div class="card">
+  <h2>Mic → Speech-to-Text (Web Speech API)</h2>
+  <div class="row">
+    <button id="startStt">Start Listening</button>
+    <button id="stopStt">Stop</button>
+    <select id="langStt"><option value="en-US">English (en-US)</option><option value="hi-IN">Hindi (hi-IN)</option></select>
+  </div>
+  <div id="sttText" class="small" style="margin-top:8px">Transcript will appear here...</div>
+</div>
+
+<!-- ===== Camera preview + Snap photo (Task 2 + 3) ===== -->
+<div class="card">
+  <h2>Camera Preview & Snap Photo</h2>
+  <video id="camPreview" autoplay playsinline width="480"></video>
+  <div class="row">
+    <button id="startCam">Start Camera</button>
+    <button id="snapPhoto">Snap Photo</button>
+    <button id="stopCam">Stop Camera</button>
+  </div>
+  <canvas id="photoCanvas" width="480" height="360"></canvas>
+  <div class="small">Saved image as data URL (open console to see full dataURL). You can upload it to backend.</div>
+</div>
+
+<!-- ===== Live stream explanation (Task 3 remote) ===== -->
+<div class="card">
+  <h2>Live Stream (local) & WebRTC hint</h2>
+  <p class="small">The video above is the local live stream. To broadcast to remote viewers use WebRTC + signaling server, or stream to an RTMP server via a media server (requires server-side components).</p>
+</div>
+
+<!-- ===== Record video (Task 4) ===== -->
+<div class="card">
+  <h2>Record Video & Auto-upload (to server) — MediaRecorder</h2>
+  <div class="row">
+    <button id="startRec">Start Recording</button>
+    <button id="stopRec">Stop Recording</button>
+    <button id="uploadRec">Upload to Server (Instagram flow)</button>
+  </div>
+  <video id="recPreview" controls width="360"></video>
+  <div class="small">Upload endpoint: <code>/upload_instagram</code> (server required for Instagram Graph API). See server sample further down.</div>
+</div>
+
+<!-- ===== Search name in Google & collect links (Task 5) ===== -->
+<div class="card">
+  <h2>Search Name & Collect Links (needs backend/API)</h2>
+  <div class="row">
+    <input id="searchName" placeholder="Type name to search (e.g., 'Arjun Prajapat')" />
+    <button id="doSearch">Search</button>
+  </div>
+  <div id="searchResults" class="small" style="margin-top:8px">Results will appear here (calls backend /api/search or Google CSE).</div>
+  <div class="small">Tip: use Google Custom Search JSON API or your own scraper backend; client scraping of Google is blocked/CORS-protected.</div>
+</div>
+
+<!-- ===== Google Apps Script example (Task 6) ===== -->
+<div class="card">
+  <h2>Google Apps Script Example</h2>
+  <p class="small">This GAS script copies Gmail attachments to Drive and logs in a Sheet. Paste into <code>script.google.com</code>.</p>
+  <textarea id="gasCode" style="width:100%;height:130px;">
+function archiveGmailAttachments() {
+  const label = GmailApp.getUserLabelByName('ArchiveToDrive');
+  const threads = label.getThreads(0, 10);
+  const folder = DriveApp.getFolderById('YOUR_DRIVE_FOLDER_ID');
+  threads.forEach(t => {
+    const msgs = t.getMessages();
+    msgs.forEach(m => {
+      m.getAttachments().forEach(att => {
+        folder.createFile(att.copyBlob());
+      });
+    });
+    t.removeLabel(label);
+  });
+}
+  </textarea>
+  <div class="small">Change label & folder ID; set a time-driven trigger to run regularly.</div>
+</div>
+
+<!-- ===== Drag & Drop Div (Task 7) ===== -->
+<div class="card">
+  <h2>Drag & Drop DIV</h2>
+  <div id="box">Drag me</div>
+  <div class="small">Click and drag the box above.</div>
+</div>
+
+<!-- ===== ChatGPT Integration (Task 8) ===== -->
+<div class="card">
+  <h2>ChatGPT Integration via Backend Proxy</h2>
+  <textarea id="chatPrompt" placeholder="Type prompt to send to ChatGPT" style="width:100%;height:70px"></textarea>
+  <div class="row" style="margin-top:8px">
+    <button id="sendChat">Send to ChatGPT</button>
+    <button id="clearLog">Clear Log</button>
+  </div>
+  <div id="log" class="small"></div>
+  <div class="small">Client calls <code>/api/chat</code>. Backend must contain your OpenAI key and proxy requests (see sample below).</div>
+</div>
+
+<!-- ===== Mic-to-ChatGPT (Task 9) ===== -->
+<div class="card">
+  <h2>Mic → Prompt → ChatGPT</h2>
+  <div class="row">
+    <button id="startSpeak">Start & Send Spoken Prompt</button>
+    <button id="stopSpeak">Stop</button>
+  </div>
+  <div class="small" id="spokenStatus">Press start, speak, and it will send the final transcript to ChatGPT via /api/chat.</div>
+</div>
+
+<!-- ===== Image generation (Task 10) ===== -->
+<div class="card">
+  <h2>Generate Image (via backend API)</h2>
+  <input id="imgPrompt" placeholder="Image prompt (e.g., 'cinematic portrait of a coder')" style="width:70%" />
+  <button id="genImage">Generate</button>
+  <div id="generatedImage" style="margin-top:8px"></div>
+  <div class="small">Client calls <code>/api/image</code>, which should call the provider (OpenAI/Replicate/etc.).</div>
+</div>
+
+<script>
+/* ============================
+   Utilities & feature glue
+   ============================ */
+const logEl = document.getElementById('log');
+function log(s){ logEl.textContent += s + "\n\n"; logEl.scrollTop = logEl.scrollHeight; }
+
+/* ===== Task 1: Mic -> Speech-to-Text (Web Speech API) ===== */
+let recognition, recognizing=false;
+document.getElementById('startStt').onclick = ()=>{
+  const lang = document.getElementById('langStt').value;
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SpeechRecognition){ alert('SpeechRecognition not supported in this browser (use Chrome).'); return; }
+  recognition = new SpeechRecognition();
+  recognition.lang = lang;
+  recognition.interimResults = true;
+  recognition.onresult = e => {
+    const text = Array.from(e.results).map(r => r[0].transcript).join('');
+    document.getElementById('sttText').textContent = text;
+  };
+  recognition.onend = ()=> { recognizing=false; document.getElementById('sttText').textContent += " (ended)"; };
+  recognition.start(); recognizing=true;
+};
+document.getElementById('stopStt').onclick = () => {
+  if(recognition && recognizing) recognition.stop();
+};
+
+/* ===== Task 2/3: Camera preview & Snap ===== */
+let localStream = null;
+const camPreview = document.getElementById('camPreview');
+document.getElementById('startCam').onclick = async ()=>{
+  try{
+    localStream = await navigator.mediaDevices.getUserMedia({video:true,audio:false});
+    camPreview.srcObject = localStream;
+  }catch(err){ alert('Camera permission denied or no camera: '+err.message); }
+};
+document.getElementById('stopCam').onclick = () => {
+  if(localStream) localStream.getTracks().forEach(t=>t.stop());
+  camPreview.srcObject = null;
+};
+document.getElementById('snapPhoto').onclick = ()=>{
+  const c = document.getElementById('photoCanvas');
+  const ctx = c.getContext('2d');
+  ctx.drawImage(camPreview, 0, 0, c.width, c.height);
+  const dataUrl = c.toDataURL('image/png');
+  console.log('photo dataURL (truncated):', dataUrl.slice(0,120)+'...');
+  alert('Photo snapped — check console for dataURL (or send to backend).');
+};
+
+/* ===== Task 4: Record video using MediaRecorder ===== */
+let recorder, recordedBlobs;
+const recPreview = document.getElementById('recPreview');
+document.getElementById('startRec').onclick = async ()=>{
+  recordedBlobs = [];
+  if(!localStream){
+    try{ localStream = await navigator.mediaDevices.getUserMedia({video:true,audio:true}); camPreview.srcObject = localStream; }
+    catch(err){ alert('Need camera + mic to record: '+err.message); return; }
+  }
+  try{
+    recorder = new MediaRecorder(localStream, {mimeType:'video/webm;codecs=vp9,opus'});
+  }catch(e){
+    recorder = new MediaRecorder(localStream);
+  }
+  recorder.ondataavailable = e=> { if(e.data && e.data.size) recordedBlobs.push(e.data); };
+  recorder.onstop = () => {
+    const superBuffer = new Blob(recordedBlobs, {type:'video/webm'});
+    recPreview.src = URL.createObjectURL(superBuffer);
+  };
+  recorder.start(1000);
+  log('Recording started.');
+};
+document.getElementById('stopRec').onclick = () => {
+  if(recorder && recorder.state !== 'inactive'){ recorder.stop(); log('Recording stopped.'); }
+};
+/* Upload recorded video to server endpoint (placeholder) */
+document.getElementById('uploadRec').onclick = async () => {
+  if(!recordedBlobs || recordedBlobs.length===0){ alert('No recording available.'); return; }
+  const blob = new Blob(recordedBlobs, {type:'video/webm'});
+  const fd = new FormData();
+  fd.append('file', blob, 'recording.webm');
+  log('Uploading recording to /upload_instagram (placeholder endpoint)...');
+  try{
+    const res = await fetch('/upload_instagram', {method:'POST', body:fd});
+    const j = await res.json();
+    log('Server response: ' + JSON.stringify(j));
+    alert('Uploaded (see server response in log). For Instagram publish, backend must call Instagram Graph API with business account.');
+  }catch(err){ log('Upload failed: '+err.message); alert('Upload failed: check backend.'); }
+};
+
+/* ===== Task 5: Search name & collect links (calls backend /api/search) ===== */
+document.getElementById('doSearch').onclick = async () => {
+  const name = document.getElementById('searchName').value.trim();
+  if(!name) return alert('Type a name first.');
+  document.getElementById('searchResults').textContent = 'Searching...';
+  try{
+    // Frontend calls backend; backend should call Google Custom Search JSON API or scrape results responsibly.
+    const res = await fetch('/api/search', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({q:name})});
+    const j = await res.json();
+    document.getElementById('searchResults').textContent = JSON.stringify(j,null,2);
+  }catch(err){
+    document.getElementById('searchResults').textContent = 'Search failed (no backend). See sample backend in file comments.';
+  }
+};
+
+/* ===== Task 7: Drag & Drop DIV ===== */
+const box = document.getElementById('box');
+let dragging=false, ox=0, oy=0;
+box.addEventListener('mousedown', e => {
+  dragging=true; ox = e.clientX - box.offsetLeft; oy = e.clientY - box.offsetTop; box.style.cursor='grabbing';
+});
+document.addEventListener('mousemove', e => {
+  if(!dragging) return;
+  box.style.left = (e.clientX - ox) + 'px';
+  box.style.top = (e.clientY - oy) + 'px';
+});
+document.addEventListener('mouseup', () => { dragging=false; box.style.cursor='grab'; });
+
+/* ===== Task 8: ChatGPT Integration via backend ===== */
+document.getElementById('sendChat').onclick = async () => {
+  const prompt = document.getElementById('chatPrompt').value.trim();
+  if(!prompt) return alert('Type a prompt first.');
+  log('Sending prompt to /api/chat ...');
+  try{
+    const res = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({prompt})});
+    const j = await res.json();
+    if(j.error) log('Error: '+JSON.stringify(j.error));
+    else log('ChatGPT response:\n' + (j.reply || JSON.stringify(j,null,2)));
+  }catch(err){ log('Chat request failed: '+err.message); }
+};
+document.getElementById('clearLog').onclick = () => logEl.textContent = '';
+
+/* ===== Task 9: Mic input -> ChatGPT (combine STT + /api/chat) ===== */
+let interimRecognizer;
+document.getElementById('startSpeak').onclick = async () => {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SpeechRecognition){ alert('SpeechRecognition not supported.'); return; }
+  interimRecognizer = new SpeechRecognition();
+  interimRecognizer.lang = 'en-US';
+  interimRecognizer.interimResults = false;
+  interimRecognizer.onresult = async e => {
+    const text = Array.from(e.results).map(r=>r[0].transcript).join('');
+    document.getElementById('spokenStatus').textContent = 'Heard: ' + text;
+    // send to backend ChatGPT
+    try{
+      const res = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({prompt:text})});
+      const j = await res.json();
+      log('Spoken prompt -> ChatGPT reply:\n' + (j.reply || JSON.stringify(j)));
+    }catch(err){ log('Failed to send spoken prompt: '+err.message); }
+  };
+  interimRecognizer.onend = () => document.getElementById('spokenStatus').textContent += ' (ended)';
+  interimRecognizer.start();
+};
+document.getElementById('stopSpeak').onclick = () => { if(interimRecognizer) interimRecognizer.stop(); };
+
+/* ===== Task 10: Generate Image via backend (/api/image) ===== */
+document.getElementById('genImage').onclick = async () => {
+  const prompt = document.getElementById('imgPrompt').value.trim();
+  if(!prompt) return alert('Type image prompt');
+  document.getElementById('generatedImage').textContent = 'Generating...';
+  try{
+    const res = await fetch('/api/image', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({prompt})});
+    const j = await res.json();
+    if(j.url){
+      document.getElementById('generatedImage').innerHTML = '<img src="'+j.url+'" style="max-width:100%;border-radius:8px"/>';
+    }else if(j.b64){
+      document.getElementById('generatedImage').innerHTML = '<img src="data:image/png;base64,'+j.b64+'" style="max-width:100%;border-radius:8px"/>';
+    }else document.getElementById('generatedImage').textContent = JSON.stringify(j);
+  }catch(err){ document.getElementById('generatedImage').textContent = 'Failed: '+err.message; }
+};
+</script>
+
+<!--
+================================================================
+SAMPLE BACKEND (Node/Express) - minimal examples for endpoints used above.
+Save as server.js, run: node server.js after npm install express node-fetch multer
+(These are minimal; secure them, use env vars, and add error handling.)
+================================================================
+
+const express = require('express');
+const fetch = require('node-fetch'); // or global fetch in node 18+
+const multer = require('multer');
+const upload = multer();
+const app = express();
+app.use(express.json());
+
+// 1) /api/chat - proxy to OpenAI (example)
+app.post('/api/chat', async (req,res)=>{
+  const prompt = req.body.prompt || '';
+  // Use your provider's API. Example pseudo (OpenAI):
+  const r = await fetch('https://api.openai.com/v1/chat/completions', {
+    method:'POST',
+    headers:{ 'Authorization': 'Bearer ' + process.env.OPENAI_KEY, 'Content-Type':'application/json' },
+    body: JSON.stringify({model:'gpt-4o-mini', messages:[{role:'user',content:prompt}]})
+  });
+  const j = await r.json();
+  // parse reply (depends on API)
+  const reply = j.choices?.[0]?.message?.content || JSON.stringify(j);
+  res.json({reply, raw:j});
+});
+
+// 2) /api/image - proxy to image generation provider
+app.post('/api/image', async (req,res)=>{
+  const prompt = req.body.prompt || '';
+  // call provider; return {url: 'https://...'} or {b64: '...'}
+  res.json({error:'Implement provider call and return image URL/base64'});
+});
+
+// 3) /api/search - use Google Custom Search JSON API (or your scraper)
+app.post('/api/search', async (req,res)=>{
+  const q = encodeURIComponent(req.body.q || '');
+  // example: https://www.googleapis.com/customsearch/v1?key=API_KEY&cx=CX&q=...
+  res.json({error:'Implement Google CSE or scraping server-side'});
+});
+
+// 4) /upload_instagram - upload media to Instagram Graph API (requires business account & tokens)
+// Steps (summary):
+// - Upload video to FB Graph endpoint /{ig-user-id}/media (with video_url or published=false media container)
+// - After container created, call POST /{ig-user-id}/media_publish with creation_id to publish.
+// See Facebook Graph API docs.
+app.post('/upload_instagram', upload.single('file'), async (req,res)=>{
+  // req.file contains uploaded file. You must upload to permanent storage (S3) or to the Graph video upload flow.
+  res.json({status:'received', size: req.file?.buffer?.length || 0});
+});
+
+app.listen(3000, ()=> console.log('Backend running on http://localhost:3000'));
+
+================================================================
+Notes:
+- Never embed API keys in frontend. Use backend and environment variables.
+- Instagram publish requires a Business IG account, Facebook App with permissions, and app review for publish actions.
+- Google Custom Search & OpenAI have quotas and billing.
+- For WebRTC broadcasting, you need a signaling server + STUN/TURN for NAT traversal.
+
+If you want, I can:
+- Provide the full Node backend fleshed out for ChatGPT & image generation (with sample env vars).
+- Provide a WebRTC publish example with simple signaling (Socket.io).
+- Convert this single-file into a zipped project with README and backend files.
+-->
+</body>
+</html>

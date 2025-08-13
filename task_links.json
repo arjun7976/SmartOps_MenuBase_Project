@@ -1,0 +1,200 @@
+[
+  {
+    "type": "LinkedIn Post",
+    "title": " Mastering Prometheus Monitoring \u2013 Real-World Tasks Completed!",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_prometheus-devops-monitoring-activity-7353799098921033728-0TZ0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-09 14:37"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 Just Deployed My First End-to-End DevOps Project!  Proud to share that I\u2019ve successfully built and deployed a real-world DevOps project integrating:  \ud83d\udd39 Flask Web App \ud83d\udd39 Docker Containerization \ud83d\udd39 CI/CD using GitHub Actions \ud83d\udd39 Live Deployment on AWS EC2  This project reflects how modern DevOps pipelines work \u2014 from code to cloud with automation, scalability, and real-time deployment!",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_devops-docker-ciabrcd-activity-7354713242964746240-gDXT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:42"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "I\u2019ve successfully implemented [task] using Boto3 and AWS EC2 in Python.  \u2705 Automated EC2 instance launch and status monitoring \u2705 IAM-secured access \u2705 Real-time resource control using Python scripts \u2705 Region: ap-south-1 | Instance Types: t2.micro, t3.micro  \ud83d\udce6 Tools: Python, Boto3, AWS EC2, IAM, Ubuntu",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_devops-aws-boto3-activity-7353304658238480384-Ms_N?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:43"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 Just built a Gemini AI Chatbot using Python, Streamlit, and LangChain!  \ud83d\udca1 This AI chatbot can answer real-time queries using LLM (Gemini 1.5) and DuckDuckGo Search API, and it's running locally with a clean, dark-themed UI powered by Streamlit.  \ud83d\udd27 Tech Stack Used: \ud83e\udde0 Gemini-1.5 Flash | \ud83d\udc0d Python | \u2699\ufe0f LangChain | \ud83c\udf10 Streamlit | \ud83d\udd0e DuckDuckGo Search | VS Code | Localhost",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_aichatbot-langchain-geminiapi-activity-7353125545154412544-QDXC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:43"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83c\udfa5 VLC Media Player Running Inside Docker! \ud83d\udc33\ud83d\udda5\ufe0f  Today, I achieved another exciting milestone \u2014 I successfully ran the VLC media player GUI inside a Docker container using X11 forwarding. This is more than just playing media \u2014 it's about running complex GUI applications in isolated, portable, and secure environments! \ud83d\udca1  \ud83d\udd27 Tools Used: Docker, Ubuntu, VLC, X11, Linux, xhost, DISPLAY",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_docker-vlc-linux-activity-7351867805295595521-1Qb0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:44"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "Successfully Ran GUI Firefox in Docker Container! \ud83d\udc33\ud83d\udda5\ufe0f  Today, I containerized and ran the full Firefox GUI inside Docker using X11 forwarding on Linux. This shows how we can run even graphical apps inside isolated environments \u2014 clean, secure, and portable. \ud83d\udca1",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_docker-linux-x11forwarding-activity-7351852326862692353-Ugw2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:45"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "Case Study:Mastering Amazon S3 Storage Classes \u2014 Optimize Cost, Performance, and Availability",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_case-studymastering-amazon-s3-storage-classes-activity-7351491995011350530-WH42?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:45"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\u2699\ufe0f Automating Tasks with a Gradio Panel \u2014 Simplifying Python Workflows!  Excited to share my recent project: an Automated Task Panel using Gradio! I built a simple, interactive window where users can easily run Python .py files without touching the terminal.",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_python-gradio-automation-activity-7351485071553404929-Hm8Q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:46"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\udd0a Running Applications with Sound Inside Docker Containers \u2014 A Practical Guide!  Today, I tackled an interesting challenge: how to give sound card access to applications running inside Docker containers. Many desktop and multimedia apps need audio, but containers don\u2019t handle audio by default \u2014 so I explored how to bridge this gap using ALSA, PulseAudio, and PipeWire.",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_docker-linux-pulseaudio-activity-7351482829957996544-ijxy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:46"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "Mastering Docker-in-Docker: Taking Containerization to the Next Level! \ud83d\udc33  Recently, I explored Docker-in-Docker (DinD) to run Docker containers inside a containerized environment \u2014 a powerful approach for CI/CD pipelines and advanced DevOps workflows.",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_docker-devops-containers-activity-7351162608109948929-xdKj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:47"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 Combining Machine Learning with Docker! I recently built a small project to practice running a Python Linear Regression model inside a Docker container \u2014 a great way to combine ML fundamentals with containerization skills.",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_docker-machinelearning-python-activity-7350384807903649793-EhMi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:48"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 Project Update: Automating Gmail Data Access with Python & OAuth! \ud83d\udce7\u2728 This week, I explored the Gmail API to securely connect a Python script with my Gmail account using OAuth 2.0.  The script authenticates safely, reads my inbox, and fetches the latest email details \u2014 all programmatically!",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_python-oauth-gmailapi-activity-7350335737541656576-r4ge?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:48"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 Practicing Linux + Docker the practical way! This week, I built a simple Linux command-line menu wrapped inside a Docker container \u2014 a hands-on project to strengthen my skills in Bash scripting, containerization, and clean environment management.",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_linux-bash-docker-activity-7350214525066829824-AnLN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:49"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 Leveling up my Git & Open-Source Contribution skills! This week, I put my version control and collaboration skills to the test by combining two important workflows",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_git-github-opensource-activity-7350206224572772355-hqxF?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:49"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\udca1 Building strong foundations in version control with Git & GitHub Today I set up a new project end-to-end: Created a fresh project folder Initialized it as a Git repository Added my first file and committed it with a clear, meaningful message Pushed everything to a brand-new GitHub repository Learning proper version control is a fundamental skill for every developer \u2014 it keeps projects organized, enables team collaboration, and prepares you for contributing to open-source or working in any modern development environment.",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_git-github-versioncontrol-activity-7350199986132869121-lskD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:50"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\udce6 Case Study: Why Companies Use Docker and the Benefits They Gain",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_docker-containers-devops-activity-7350193685088595968-tXJ1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:50"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\udda5\ufe0f\u2728 Ever wondered what really happens when you press Ctrl+C or Ctrl+Z in your Linux terminal? Most of us use these shortcuts every day \u2014 but behind the scenes, they\u2019re not just keyboard tricks. They\u2019re actually process control signals that interact directly with the Linux kernel! \ud83d\udc27\u2699\ufe0f",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_linux-opensource-terminal-activity-7350190939258134528-3zBe?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:51"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 MongoDB Hands-On: From Command Line to Compass! \ud83d\udcbb\ud83d\udcca Just took another practical step in my data journey!  In this demo, I: \u2705 Created a student data file via Command Line (CMD) \u2705 Inserted records into MongoDB using mongoimport \u2705 Verified and explored the data visually in MongoDB Compass",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_mongodb-mongodbcompass-clitocompass-activity-7349618520067899392-9K32?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:52"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 Case Study | AWS Auto Scaling in Action  In this detailed case study, we explore how RideNow Cabs, a rapidly growing Indian cab booking startup, leveraged AWS Auto Scaling to overcome major infrastructure challenges:",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_case-study-aws-auto-scaling-in-action-activity-7349396034227257344-5lAA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:52"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "All-in-One DevOps Stack in a Docker Container!  Proud to share that I\u2019ve successfully containerized a full-stack project combining:  \ud83d\udd39 Apache HTTP Server \u2013 for static web content \ud83d\udd39 Flask (Python) \u2013 for dynamic backend APIs \ud83d\udd39 Jenkins \u2013 to integrate CI/CD pipelines  All running seamlessly inside a single Docker container using ubuntu:22.04, with custom configuration and service orchestration handled via a robust Dockerfile.",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_devops-docker-jenkins-activity-7348779020009791488-xZs-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:53"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83c\udf1f \ud83d\udce2 Project Update: Exploring Linux + Docker for DevOps & Cloud Automation! \ud83d\ude80\ud83d\udc27\ud83d\udc33",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_linux-docker-devops-activity-7348265866859339776-1ddu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:54"
+  },
+  {
+    "type": "LinkedIn Post",
+    "title": "\ud83d\ude80 I\u2019m excited to share my All-In-One Python Automation Hub!  Under the invaluable mentorship of Vimal Daga Sir and the guidance of LinuxWorld, I have built this end-to-end automation project to combine multiple practical Python automations in one simple Streamlit web app.  \ud83d\udca1 What makes it special?  In one place, you get 12 real-world automations: \u2705 Check your system RAM usage \u2705 Send WhatsApp messages to any number (saved or unsaved) \u2705 Send Emails automatically \u2705 Send SMS and make voice calls (Twilio) \u2705 Do Google search & get results in Python \u2705 Post on Instagram, X (Twitter), Facebook (via Selenium) \u2705 Download entire website data automatically \u2705 Send anonymous emails \u2705 Send LinkedIn DMs (using Selenium) \u2705 Swap faces in images (OpenCV + dlib) \u2705 Compare LLaMA vs DeepSeek LLMs on a cloud server and generate a topic understanding report",
+    "url": "https://www.linkedin.com/posts/arjun-prajapati-79769o5815_vimal-activity-7347827579099201536-Yhry?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEee7acBNFffYtw4mZShIV-K33kYRhdmT0A",
+    "date_added": "2025-08-10 13:55"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "devops-microservices-main",
+    "url": "https://github.com/arjun7976/devops-microservices-main",
+    "date_added": "2025-08-10 16:05"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "linux-docker-webapp-menu",
+    "url": "https://github.com/arjun7976/linux-docker-webapp-menu",
+    "date_added": "2025-08-10 16:07"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "Docker-flask-jenkins-automate",
+    "url": "https://github.com/arjun7976/Docker-flask-jenkins-automate",
+    "date_added": "2025-08-10 16:08"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "apache-docker",
+    "url": "https://github.com/arjun7976/apache-docker",
+    "date_added": "2025-08-10 16:08"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "jenkins-docker",
+    "url": "https://github.com/arjun7976/jenkins-docker",
+    "date_added": "2025-08-10 16:09"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "linux-menu-docker",
+    "url": "https://github.com/arjun7976/linux-menu-docker",
+    "date_added": "2025-08-10 16:09"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "docker-flask-ssh-app",
+    "url": "https://github.com/arjun7976/docker-flask-ssh-app",
+    "date_added": "2025-08-10 16:10"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "docker-linear-regression",
+    "url": "https://github.com/arjun7976/docker-linear-regression",
+    "date_added": "2025-08-10 16:10"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "Portfolio",
+    "url": "https://github.com/arjun7976/portfolio",
+    "date_added": "2025-08-10 16:11"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "flask-cicd-docker-aws1",
+    "url": "https://github.com/arjun7976/flask-cicd-docker-aws1",
+    "date_added": "2025-08-10 16:12"
+  },
+  {
+    "type": "GitHub Repository",
+    "title": "lifey-app",
+    "url": "https://github.com/arjun7976/lifey-app",
+    "date_added": "2025-08-10 16:12"
+  }
+]
