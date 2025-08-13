@@ -40,6 +40,7 @@ try:
     PYWHATKIT_AVAILABLE = True
 except:
     kit = None
+    PYWHATKIT_AVAILABLE = False
 
 try:
     from gmail_integration import show_gmail_ui
