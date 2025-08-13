@@ -38,8 +38,8 @@ except ImportError:
 try:
     import pywhatkit as kit
     PYWHATKIT_AVAILABLE = True
-except ImportError:
-    PYWHATKIT_AVAILABLE = False
+except:
+    kit = None
 
 try:
     from gmail_integration import show_gmail_ui
